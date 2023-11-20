@@ -2,7 +2,17 @@
 
 ## Introduction
 
-ConsoleCalc is a command-line calculator program that provides users with various mathematical operations and matrix calculations accessible through a text-based interface in the console or terminal.
+ConsoleCalc is a command-line calculator program that provides users with 50 mathematical operations accessible through a text-based interface in the console or terminal.
+
+## Categories of operations 
+
+- Fundamental operations (11 operations)
+- Combinatoric operations (4 operations)
+- Trigonometric operations (6 operations)
+- Inverse trigonometric operations (6 operations)
+- Matrix operations (11 operations)
+- Logarithmic operations (2 operations)
+- Financial operations (10 operations) 
 
 ## Features
 
