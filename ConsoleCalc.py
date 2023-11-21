@@ -4,7 +4,7 @@ import math
 import numpy as np
 
 # Title of the program. 
-print("\n\nWelcome to the CLI Calculator :)\n\n")
+print("\n\nWelcome to the ConsoleCalc - CLI Calculator :)\n\n")
 
 # Dictionary of the calculations and their IDs available in the program. 
 calculation_names = {
@@ -535,7 +535,7 @@ while run:
     choice = int(input("Enter the calculation number (1-50): "))
 
     # Showing the ID and its calculation name. 
-    print("\nEntered choice :", choice)
+    print("\nEntered ID Number :", choice)
     selected_calculation = calculation_names.get(choice, "Invalid ID")
 
     # If the entered ID is NOT in the dictionary ... 
