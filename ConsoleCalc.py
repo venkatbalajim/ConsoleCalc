@@ -17,9 +17,7 @@ calculation_names = {
     28: "User Defined Base", 29: "Natural Base",
     30: "Matrix Addition", 31: "Matrix Subtraction", 32: "Matrix Multiplication",
     33: "Scalar Multiplication", 34: "Matrix Exponential", 35: "Determinant",
-    36: "Trace", 37: "Inverse", 38: "Transpose", 39: "Rank", 40: "Adjoint of a Matrix", 41: "Simple Interest",
-    42: "Compound Interest", 43: "Principal", 44: "Number of years", 45: "Rate of interest", 46: "Total amount",
-    47: "Amortization", 48: "Present Value", 49: "Future Value", 50: "Number of times compounded in CI"
+    36: "Trace", 37: "Inverse", 38: "Transpose", 39: "Rank", 40: "Adjoint of a Matrix"
 }
 
 # List of all the categories of calculations. 
@@ -45,10 +43,6 @@ categories = {
         "Matrix Addition", "Matrix Subtraction", "Matrix Multiplication",
         "Scalar Multiplication", "Matrix Exponential", "Determinant",
         "Trace", "Inverse", "Transpose", "Rank", "Adjoint of a Matrix"
-    ],
-    "Financial Calculations": [
-        "Simple Interest", "Compound Interest", "Principal", "Number of years", "Rate of interest", "Total amount",
-        "Amortization", "Present Value", "Future Value", "Number of times compounded in CI"
     ]
 }
 
@@ -464,83 +458,6 @@ def adjoint():
         print()
     return "Adjoint of a matrix done successfully"
 
-# Simple interest calculation. 
-def simple_interest():
-    psi = float(input("Enter the principal amount : "))
-    nsi = float(input("Enter the number of years : "))
-    rsi = float(input("Enter the rate of interest in % (eg : 5) : "))
-    si = psi * ((rsi / 100) * nsi)
-    return f"Simple Interest calculated as : {si}"
-
-# Compound interest calculation. 
-def compound_interest():
-    principal = float(input("Enter the principal amount: "))
-    num_years = float(input("Enter the number of years: "))
-    annual_interest_rate = float(input("Enter the annual interest rate in % (e.g., 5): "))
-    times_compounded = float(input("Enter the number of times interest is compounded per year: "))
-    rate = annual_interest_rate / 100 
-    amount = principal * (1 + rate / times_compounded) ** (times_compounded * num_years)
-    compound_interest = amount - principal
-    return f"Compound Interest calculated as: {compound_interest:.2f}"
-
-# Principal of a loan amount calculation. 
-def calculate_principal():
-    return "Performing principal of a loan amount calculation"
-
-# Numbers of years in a loan to be paid calculation. 
-def calculate_num_years():
-    return "Performing number of years."
-
-# Total amount to be paid in a loan calculation. 
-def calculate_total_amount():
-    principal = float(input("Enter the principal amount: "))
-    num_years = float(input("Enter the number of years: "))
-    annual_interest_rate = float(input("Enter the annual interest rate: "))
-    monthly_installment = float(input("Enter the monthly installment: "))
-    interest_rate = annual_interest_rate / 100
-    num_months = num_years * 12
-    if interest_rate > 0 and num_months > 0:
-        total_amount = principal * (1 + interest_rate / 12) ** num_months
-        total_amount += monthly_installment * ((1 + interest_rate / 12) ** num_months - 1) / (interest_rate / 12)
-        return f"The Total amount is approximately {total_amount:.2f}"
-    else:
-        return "Invalid input. Please provide positive values for interest rate and loan term."
-
-# Amortization schedule for a loan calculation. 
-def calculate_amortization():
-    principal = float(input("Enter the principal amount: "))
-    annual_interest_rate = float(input("Enter the annual interest rate: "))
-    num_years = float(input("Enter the number of years: "))
-    monthly_interest_rate = (annual_interest_rate / 100) / 12
-    num_installments = int(num_years * 12)
-    amortization_schedule = []
-    for i in range(1, num_installments + 1):
-        interest = principal * monthly_interest_rate
-        payment = principal * (monthly_interest_rate * (1 + monthly_interest_rate) ** num_installments) / ((1 + monthly_interest_rate) ** num_installments - 1)
-        principal -= payment - interest
-        amortization_schedule.append([i, payment])
-    print("\nAmortization Schedule")
-    print("Installment", "\t\tPayment")
-    for installment, payment in amortization_schedule:
-        print(f"{installment}\t\t{payment:.2f}")
-    return "Amortization done successfully"
-
-# Present value calculation. 
-def calculate_present_value():
-    return "Performing present value"
-
-# Future value calculation. 
-def calculate_future_value():
-    return "Performing future value"
-
-# Number of times amount compounded calculation. 
-def calculate_num_times_compounded():
-    return "Performing number of times compounded"
-
-# Rate of interest calculation. 
-def calculate_rate_of_interest():
-    return "Performing rate of interest"
-
 # Switches to redirect to the selected calculation. 
 switch_cases = {
     1: addition,
@@ -582,17 +499,7 @@ switch_cases = {
     37: inverse,
     38: transpose,
     39: rank,
-    40: adjoint,
-    41: simple_interest,
-    42: compound_interest,
-    43: calculate_principal,
-    44: calculate_num_years,
-    45: calculate_rate_of_interest,
-    46: calculate_total_amount,
-    47: calculate_amortization,
-    48: calculate_present_value,
-    49: calculate_future_value,
-    50: calculate_num_times_compounded
+    40: adjoint
 }
 
 # Function to fetch the name of the calculation using the ID. 
